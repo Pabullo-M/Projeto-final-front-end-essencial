@@ -21,6 +21,7 @@ section.slider{
     height: auto;
     position: relative;
     text-align: center;
+    transition: 1s;
 }
 
 .slide-box img{
@@ -30,12 +31,12 @@ section.slider{
 .nav-manual, .nav-auto{
     position: absolute;
     width: 100%;
-    margin-top: 35%;
+    margin-top: 23%;
     display: flex;
     justify-content: center;
 }
 .nav-manual .manual-btn, .nav-auto div{
-    border: 1px solid #ff0054;
+    border: 1px solid #00000063;
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
@@ -46,11 +47,11 @@ section.slider{
     margin-right: 10px;
 }
 .nav-manual .manual-btn:hover{
-    background-color: #ff0054;
+    background-color: #3f3f3fbd;
 }
 
 #radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3{
-    background-color: #ff0054;
+    background-color: #3f3f3fc4;
 }
 
 #radio1:checked ~ .primeiro{
@@ -63,4 +64,17 @@ section.slider{
 
 #radio3:checked ~ .primeiro{
     margin-left: -50%;
+}
+
+@media screen and (max-width: 900px) {
+    .img-desktop{
+        display: none;
+    }
+    .img-mobile{
+        display: block;
+    }
+    
+    .nav-auto, .nav-manual{
+        margin-top: 100%;
+    }
 }
