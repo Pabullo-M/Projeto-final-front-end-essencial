@@ -11,11 +11,23 @@ header{
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.267);
     border-bottom: 1px solid rgba(0, 0, 0, 0.500);
 }
-
+i{
+    color: black;
+}
 .bg-body-tertiary {
     --bs-bg-opacity: none !important;
     font-family: "Oswald", sans-serif;
     font-weight: 800;
+}
+.navbar-nav{
+    width: 95%;
+    border-radius: 0px 0px 10px 10px;
+}
+.navbar-toggler{
+    font-size: small !important;
+}
+.dropdown-menu{
+--bs-dropdown-bg:  yellow !important;
 }
 
 .pesquisa{
@@ -35,10 +47,10 @@ header{
     text-align: center;
     position: relative;
 }
-.btnSearch img{
-    width: 1.5rem;
-    height: 1.5rem;
-    color: #fff;
+.btnSearch i{
+position: static;
+margin-left: 35%;
+color: #fff;
 }
 
 
@@ -50,14 +62,15 @@ header{
     justify-content: end;
     flex-direction: row;
     width: 100%;
-    padding-right: 5%;
+    padding-right: 0;
     padding-bottom: 0.5%;
 }
-.icones img{
-    margin-right: 2rem;
-    width: 1.5rem;
-    height: 1.5rem;
+.fa-solid{
+    margin-right:2rem;
 }
+
+
+
 
 body{
     background:linear-gradient(orange, yellow);
@@ -82,7 +95,7 @@ footer.nav-item{
     height: 1rem;
 }
 
-@media (max-width: 524px){
+@media (max-width: 991px){
     .d-flex{
         width: 50%;
     }
@@ -95,6 +108,9 @@ footer.nav-item{
         height: 0.8rem;
         color: #fff;
         margin-right: 5%;
+    }
+    .navbar-nav{
+        background-color: orange;
     }
 
 }

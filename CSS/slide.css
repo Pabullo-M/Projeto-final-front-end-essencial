@@ -1,3 +1,10 @@
+.navbar-nav-scroll{
+    z-index: 1;
+    position: relative;
+    
+}
+
+
 section.slider{
     margin: 0 auto;
     margin-top: 0.4%;
@@ -5,6 +12,7 @@ section.slider{
     height: auto;
     padding: 0 !important;
     overflow: hidden;
+    z-index: 2;
 }
 
 .slider-content{
@@ -74,9 +82,6 @@ section.slider{
         width: 100%;
         height: 15rem;
     }
-    .img-mobile{
-    }
-    
     .nav-auto, .nav-manual{
         margin-top: 100%;
     }

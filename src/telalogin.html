@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./CSS/reset.css">
-    <link rel="stylesheet" href="./CSS/estilo.css">
-    <link rel="stylesheet" href="./CSS/slide.css">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <link rel="stylesheet" href="../CSS/slide.css">
+    <link rel="stylesheet" href="../CSS/telalogin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -26,7 +27,7 @@
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Principal</a>
+                    <a class="nav-link active" aria-current="page" href="../index.html">Principal</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle"role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,48 +45,27 @@
             </div>
           </nav>
           <div class="icones">
-            <a href=""> <i id="carrinho" class="fa-solid fa-cart-shopping fa-lg"></i></a>
-            <a href="./src/telalogin.html"> <i id="icone usuario" class="fa-sharp fa-solid fa-circle-user fa-lg" style="color: #000000;"></i></a>
+            <a href=""> <i id="carrinho" class="fa-solid fa-cart-shopping fa-lg" ></i></a>
+            <a href=""> <i id="icone usuario" class="fa-sharp fa-solid fa-circle-user fa-lg" ></i></a>
             <a href=""> <i id="configurações" class="fa-solid fa-gear fa-lg" ></i></a>
         </div>
     </header>
-    
-    <section class="slider">
-      <div class="slider-content">
-
-        <input type="radio" name="btn-radio" id="radio1">
-        <input type="radio" name="btn-radio" id="radio2">
-        <input type="radio" name="btn-radio" id="radio3">
-
-        <div class="slide-box primeiro">
-          <img class="img-desktop" src="./img/cardprincipal.webp" alt="slide 1">
-          <img class="img-mobile" src="" alt=""></a> <!--chamar a imagem do mobile-->
-        </div>
-        
-        <div class="slide-box segundo">
-          <img class="img-desktop" src="./img/card2.webp" alt="slide 1">
-          <img class="img-mobile" src="" alt=""></a> <!--chamar a imagem do mobile-->
-        </div>
-
-        <div class="slide-box terceiro">
-          <img class="img-desktop" src="./img/card3.webp" alt="slide 1">
-          <img class="img-mobile" src="" alt=""></a> <!--chamar a imagem do mobile-->
-        </div>
-
-        <div class="nav-auto">
-          <div class="auto-btn1"></div>
-          <div class="auto-btn2"></div>
-          <div class="auto-btn3"></div>
-        </div>
-        
-        <div class="nav-manual">
-          <label for="radio1" class="manual-btn"></label>
-          <label for="radio2" class="manual-btn"></label>
-          <label for="radio3" class="manual-btn"></label>
-        </div>
-
+    <div class="container">
+        <h2>Informe Usuario e Senha</h2>
+        <p></p>
+        <form action="/action_page.php">
+          <div class="form-group">
+            <label for="usr">Usuario:</label>
+            <input type="text" class="form-control" id="usr" name="username">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Senha:</label>
+            <input type="password" class="form-control" id="pwd" name="password">
+          </div>
+          <button type="submit" class="btn btn-dark">Login</button>
+        </form>
       </div>
-    </section>
+
     <footer >
       <ul class="nav justify-content-center border-bottom">
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i class="fa-brands fa-square-facebook"></i></a></li>
@@ -96,7 +76,7 @@
       </ul>
       <p class="text-center text-muted">© 2024 Company, Inc</p>
     </footer>
-    <script src="./js/slide.js" defer></script>
+    <script src="../js/slide.js" defer></script>
     <script src="https://kit.fontawesome.com/82a2bf6482.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
