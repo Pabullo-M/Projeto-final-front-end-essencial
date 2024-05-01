@@ -75,6 +75,8 @@ section.slider{
         height: 15rem;
     }
     .img-mobile{
+        width: 100%;
+        height: 15rem;
     }
     
     .nav-auto, .nav-manual{
