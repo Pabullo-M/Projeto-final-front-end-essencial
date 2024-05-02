@@ -1,43 +1,44 @@
-.card-container {
+.product-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  gap: 20px;
   padding: 20px;
 }
 
 .card {
-  width: 300px;  /* Ajuste para uma largura razoável do card */
+  width: 300px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra leve para destacar o card */
-  text-align: center; /* Centraliza o texto e o botão no card */
-  background-color: #ffffff; /* Fundo branco para o card */
-  overflow: hidden; /* Garante que nada saia do border-radius */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  background-color: #ffffff;
+  overflow: hidden;
 }
 
 .card img {
-  width: 100%; /* Faz a imagem ocupar toda a largura do card */
-  height: auto; /* Mantém a proporção da imagem */
-  border-top-left-radius: 10px; /* Arredonda os cantos superiores da imagem */
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 .card h3 {
-  margin: 10px 0; /* Espaçamento acima e abaixo do título */
-  color: #333; /* Cor escura para o texto do título */
+  margin: 10px 0;
+  color: #333;
 }
 
 .card button {
-  background-color: #0056b3; /* Cor de fundo azul para o botão */
-  color: #ffffff; /* Texto branco para contraste */
-  border: none; /* Sem borda */
-  padding: 10px 20px; /* Padding para fazer o botão maior e mais fácil de clicar */
-  margin-bottom: 15px; /* Espaçamento abaixo do botão */
-  cursor: pointer; /* Cursor de clique para indicar interatividade */
-  transition: background-color 0.3s; /* Transição suave para hover */
-  border-bottom-left-radius: 10px; /* Arredonda os cantos inferiores do botão */
+  background-color: #0056b3;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 .card button:hover {
-  background-color: #004494; /* Cor mais escura no hover para feedback visual */
+  background-color: #004494;
 }

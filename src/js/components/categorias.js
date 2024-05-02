@@ -1,10 +1,28 @@
-function handleCategoriesDropdown(event) {
-  event.preventDefault();
+import { fetchCategories } from '../services/api.js';
 
-  const dropdownMenu = document.querySelector('.dropdown-menu');
-  dropdownMenu.classList.toggle('show');
-
+async function renderCategories() {
+  const categories = await fetchCategories();
+  const menu = document.getElementById('category-menu');
+  menu.innerHTML = '';  // Limpa o menu existente
+  categories.forEach(category => {
+    const item = document.createElement('li');
+    const link = document.createElement('a');
+    link.className = 'dropdown-item';
+    link.href = '#';
+    link.textContent = category.nome;
+    link.addEventListener('click', handleCategorySelection);
+    item.appendChild(link);
+    menu.appendChild(item);
+  });
 }
+
+// function handleCategoriesDropdown(event) {
+//   // event.preventDefault();
+
+//   const dropdownMenu = document.querySelector('.dropdown-menu');
+//   dropdownMenu.classList.toggle('show');
+
+// }
 
 function handleCategorySelection(event) {
   event.preventDefault();
@@ -16,12 +34,14 @@ function handleCategorySelection(event) {
 
 }
 
-export function setupCategoryDropdown() {
+export async function setupCategoryDropdown() {
   const categoriesToggle = document.querySelector('.nav-link.dropdown-toggle');
-  categoriesToggle.addEventListener('click', handleCategoriesDropdown);
+  const dropdown = new bootstrap.Dropdown(categoriesToggle);
 
-  const categoryItems = document.querySelectorAll('.dropdown-item');
-  categoryItems.forEach(item => {
-      item.addEventListener('click', handleCategorySelection);
+  categoriesToggle.addEventListener('click', function (event) {
+    event.preventDefault();
+    dropdown.toggle();
   });
+
+  await renderCategories();
 }

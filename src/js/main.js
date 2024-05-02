@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupSearchForm();
     setupUserIcon();
     setupNavigationLinks();
-    setupCategoryDropdown();
+
+
+    await setupCategoryDropdown();
 
 
     const produtos = await fetchProducts();

@@ -9,20 +9,20 @@ function setupCardInteractions() {
 }
 
 // Função para renderizar os produtos no DOM
-export function renderProducts(products) {
-  const productsContainer = document.querySelector('#products-container');
+export function renderProducts(produtos) {
+  const productsContainer = document.querySelector('.product-container');
   productsContainer.innerHTML = '';
 
-  products.forEach(product => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-          <img src="${product.image}" alt="${product.name}">
-          <h3>${product.name}</h3>
-          <p>${product.description}</p>
-          <button>Saiba mais</button>
-      `;
-      productsContainer.appendChild(card);
+  produtos.forEach(produto => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="${produto.foto}" alt="${produto.nome}">
+      <h3>${produto.nome}</h3>
+      <p>${produto.preco}</p>
+      <button>Saiba mais</button>
+    `;
+    productsContainer.appendChild(card);
   });
 
   setupCardInteractions();
