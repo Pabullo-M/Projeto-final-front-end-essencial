@@ -1,17 +1,15 @@
 export function initializeCart() {
-  //seleciona a imagem dentro da tag <a> que tem o alt "carrinho", precisa do parentNode.
-  const carrinhoIcone = document.querySelector('.icones a img[alt="carrinho"]').parentNode;
-  carrinhoIcone.addEventListener('click', irParaCarrinho);
+  const carrinhoLink = document.querySelector('.carrinho-link');
+  carrinhoLink.addEventListener('click', function(event) {
+    event.preventDefault(); // Previne a navegação padrão do link
+    irParaCarrinho();
+  });
 }
 
 //busca o carrinho no localStorage
 function buscarCarrinho() {
   const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
-
-  if (carrinho.length === 0) {
-    return [];
-  }
-  return carrinho;
+  return carrinho.length === 0 ? [] : carrinho;
 }
 
 function irParaCarrinho() {

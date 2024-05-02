@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupSearchForm();
     // setupUserIcon();
     setupNavigationLinks();
-    // initializeCart();
+    initializeCart();
 
 
     await setupCategoryDropdown();

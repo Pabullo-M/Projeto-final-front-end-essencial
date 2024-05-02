@@ -85,7 +85,10 @@ color: #fff;
     margin-right:2rem;
 }
 
-
+.carrinho-link {
+    position: relative;
+    z-index: 1000; /* Um valor alto para garantir que está na frente */
+  }
 
 
 body{
