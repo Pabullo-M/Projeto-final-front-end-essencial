@@ -4,7 +4,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content:end;
-
+    position: fixed;
     width: 100%;
     height: 6rem;
     background-color: orange;
@@ -77,8 +77,8 @@ color: #fff;
     height: 2rem;
 }
 .icones button{
+    background-color:transparent;
     border: none;
-    background-color: #ffffff07;
 
 }
 .fa-solid{

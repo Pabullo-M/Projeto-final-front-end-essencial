@@ -39,7 +39,7 @@ async function main() {
             localStorage.setItem('nome', nome);;
             let storage = localStorage.getItem('nome')
             alert("Usuario conectado com sucesso");
-            window.location.href = "../index.html";
+            window.location.href = "../src/index.html";
                 } else {
             alert("Usuario ou senha incorretos")
         }
@@ -72,7 +72,7 @@ function logout(){
       var div = document.getElementById("usuarioLogado");
       div.innerHTML = '';
       var link = document.createElement("a");
-      link.href = "./src/telalogin.html";
+      link.href = "../src/telalogin.html";
       var paragrafo = document.createElement("p");
       paragrafo.textContent = "Login";
       link.appendChild(paragrafo);

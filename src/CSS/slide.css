@@ -1,6 +1,11 @@
+header{
+    top:0;
+    position: fixed;
+    z-index: 10;
+}
 .navbar-nav-scroll{
     z-index: 1;
-    position: relative;
+    position: fixed;
     
 }
 
@@ -10,7 +15,8 @@ section.slider{
     margin-top: 0.4%;
     width: 100%;
     height: auto;
-    padding: 0 !important;
+    padding: 6rem 0 4rem 0 !important;
+  
     overflow: hidden;
     z-index: 2;
 }
