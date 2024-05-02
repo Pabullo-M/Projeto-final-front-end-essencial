@@ -12,6 +12,11 @@ function buscarCarrinho() {
   return carrinho.length === 0 ? [] : carrinho;
 }
 
+function buscarUsuario() {
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
+  return usuario;
+}
+
 function irParaCarrinho() {
   const carrinho = buscarCarrinho();
 
