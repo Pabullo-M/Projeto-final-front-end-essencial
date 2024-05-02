@@ -12,8 +12,10 @@ function proximaImg(){
 }
 
 // Exportando a função para usar em outro lugar
-export const initializeSlider = () => {
+function initializeSlider() {
     document.getElementById('radio1').checked = true;
     const nextImage = proximaImg(); // Criando uma closure para manter o estado de 'cont'
     setInterval(nextImage, 6000);
-};
+}
+
+export { initializeSlider }

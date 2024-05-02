@@ -1,12 +1,28 @@
+import { createProductCard } from '../utils/cards.js';
+
+// adicionar produtos ao carrinho
+function addToCart(produtoNome, produtoPreco, produtoImagem) {
+  const cart = JSON.parse(localStorage.getItem('carrinho') || '[]');
+  cart.push({ nome: produtoNome, preco: produtoPreco, imagem: produtoImagem });
+  localStorage.setItem('carrinho', JSON.stringify(cart));
+  alert(`${produtoNome} adicionado ao carrinho!`);
+}
+
+// Função para adicionar interações aos cards
 function setupCardInteractions() {
   const cards = document.querySelectorAll('.card');
   cards.forEach(card => {
-      const saibaMaisButton = card.querySelector('button');
-      saibaMaisButton.addEventListener('click', () => {
-          alert(`Saiba mais sobre: ${card.querySelector('h3').textContent}`);
-      });
+    const saibaMaisButton = card.querySelector('button');
+    const produtoNome = card.querySelector('h3').textContent;
+    const produtoPreco = card.querySelector('p').textContent;
+    const produtoImagem = card.querySelector('img').src;
+
+    saibaMaisButton.addEventListener('click', () => {
+      addToCart(produtoNome, produtoPreco, produtoImagem);
+    });
   });
 }
+
 
 // Função para renderizar os produtos no DOM
 export function renderProducts(produtos) {
@@ -14,15 +30,7 @@ export function renderProducts(produtos) {
   productsContainer.innerHTML = '';
 
   produtos.forEach(produto => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <img src="${produto.foto}" alt="${produto.nome}">
-      <h3>${produto.nome}</h3>
-      <p>${produto.preco}</p>
-      <button>Saiba mais</button>
-    `;
-    productsContainer.appendChild(card);
+    createProductCard(productsContainer, produto, 'home');
   });
 
   setupCardInteractions();
