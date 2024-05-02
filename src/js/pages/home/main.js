@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     initializeCart();
 
 
-    await setupCategoryDropdown();
+    // await setupCategoryDropdown();
 
 
     const produtos = await fetchProducts();
