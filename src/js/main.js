@@ -2,9 +2,9 @@ import { initializeSlider } from "./utils/slider.js";
 import { setupSearchForm } from "./components/pesquisa.js";
 // import { setupUserIcon } from "./components/usuario.js";
 import { setupNavigationLinks } from './components/principal.js';
-import { setupCategoryDropdown } from './components/categorias.js';
+// import { setupCategoryDropdown } from './components/categorias.js';
 import { renderProducts } from './components/produtos.js';
-import { initializeCart } from './components/carrinho.js';
+// import { initializeCart } from './components/carrinho.js';
 import { fetchProducts } from "./services/api.js";
 
 document.addEventListener('DOMContentLoaded', async function() {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // initializeCart();
 
 
-    await setupCategoryDropdown();
+    // await setupCategoryDropdown();
 
 
     const produtos = await fetchProducts();

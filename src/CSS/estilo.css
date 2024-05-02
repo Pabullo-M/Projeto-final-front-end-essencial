@@ -89,7 +89,7 @@ color: #fff;
 
 
 body{
-    background:linear-gradient(orange, yellow);
+    background-color:#FFC800 !important;
     height: 100vh;
 }
 
