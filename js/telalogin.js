@@ -19,15 +19,14 @@ function receberUsuario() {
 
 function encontrarPosicao(array, objeto) {
     for (let i = 0; i < array.length; i++) {
-        // Comparar os objetos
         if (JSON.stringify(array[i]) === JSON.stringify(objeto)) {
-            return i; // Retorna a posição do objeto quando encontrado
+            return i; 
         }
     }
-    return -1; // Retorna -1 se o objeto não for encontrado no array
+    return -1; 
 }
 
-async function main() {
+async function login() {
     try {
         const busca = await buscaUsuario();
         const recebe = receberUsuario();
@@ -44,18 +43,10 @@ async function main() {
             alert("Usuario ou senha incorretos")
         }
     } catch (error) {
-        console.error('Erro na função principal:', error);
+        console.error('Erro no login:', error);
     }
 }
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    let botaoLogin = document.getElementById("login");
-    botaoLogin.addEventListener("click", function() {
-        main();
-        console.log(receberUsuario());
-    });
-});
 
 function usuarioLogado(){
     if(localStorage.getItem('nome') !== null){
@@ -80,6 +71,3 @@ function logout(){
       
 }
 
-document.getElementById("exit").addEventListener("click", function() {
-    logout();
-});

@@ -3,3 +3,4 @@ export function initializeCart() {
   carrinho.addEventListener('click', () => {});
 
 }
+
