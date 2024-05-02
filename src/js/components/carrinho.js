@@ -4,10 +4,6 @@ export function initializeCart() {
   carrinhoIcone.addEventListener('click', irParaCarrinho);
 }
 
-<<<<<<< HEAD
-}
-
-=======
 //busca o carrinho no localStorage
 function buscarCarrinho() {
   const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
@@ -27,4 +23,3 @@ function irParaCarrinho() {
     alert('Carrinho vazio!');
   }
 }
->>>>>>> origin/javascript
