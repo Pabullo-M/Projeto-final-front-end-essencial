@@ -82,6 +82,14 @@ section.slider{
         width: 100%;
         height: 15rem;
     }
+<<<<<<< HEAD:CSS/slide.css
+=======
+    .img-mobile{
+        width: 100%;
+        height: 15rem;
+    }
+    
+>>>>>>> 8a16c8278a242e69e7f329c7708baf51f8815853:src/CSS/slide.css
     .nav-auto, .nav-manual{
         margin-top: 100%;
     }
