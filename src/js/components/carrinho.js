@@ -1,13 +1,9 @@
 export function initializeCart() {
   //seleciona a imagem dentro da tag <a> que tem o alt "carrinho", precisa do parentNode.
-  const carrinhoIcone = document.querySelector('.icones a img[alt="carrinho"]').parentNode;
+  const carrinhoIcone = document.querySelector('.icones').parentNode;
   carrinhoIcone.addEventListener('click', irParaCarrinho);
 }
 
-<<<<<<< HEAD
-}
-
-=======
 //busca o carrinho no localStorage
 function buscarCarrinho() {
   const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
@@ -27,4 +23,3 @@ function irParaCarrinho() {
     alert('Carrinho vazio!');
   }
 }
->>>>>>> origin/javascript
