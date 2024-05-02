@@ -76,6 +76,11 @@ color: #fff;
     padding-bottom: 0.5%;
     height: 2rem;
 }
+.icones button{
+    border: none;
+    background-color: #ffffff07;
+
+}
 .fa-solid{
     margin-right:2rem;
 }
@@ -93,7 +98,7 @@ footer{
     height: 4rem;
     font-size: small;
     bottom: 0;
-    position: absolute;
+    position: fixed;
     background-color: orange;
     box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.336);
     border-top: 1px solid rgba(0, 0, 0, 0.500);

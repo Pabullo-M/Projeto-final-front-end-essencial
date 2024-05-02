@@ -38,7 +38,7 @@ async function main() {
             let senha = receberUsuario().senha;
             localStorage.setItem('nome', nome);;
             let storage = localStorage.getItem('nome')
-            alert("Usuario conectado com sucesso" + storage);
+            alert("Usuario conectado com sucesso");
             window.location.href = "../index.html";
                 } else {
             alert("Usuario ou senha incorretos")
@@ -65,3 +65,21 @@ function usuarioLogado(){
 }
 
 window.onload = usuarioLogado;
+
+function logout(){
+    localStorage.clear();
+    alert("Usuario desconectado");
+      var div = document.getElementById("usuarioLogado");
+      div.innerHTML = '';
+      var link = document.createElement("a");
+      link.href = "./src/telalogin.html";
+      var paragrafo = document.createElement("p");
+      paragrafo.textContent = "Login";
+      link.appendChild(paragrafo);
+      div.appendChild(link);
+      
+}
+
+document.getElementById("exit").addEventListener("click", function() {
+    logout();
+});
