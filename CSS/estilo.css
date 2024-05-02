@@ -57,6 +57,16 @@ color: #fff;
 .navbar{
     height: 5%;
 }
+.nomeUsuario{
+    height: 0%;
+}
+.nomeUsuario a{
+    color: black;
+}
+#usuarioLogado{
+    font-weight: 900;
+    padding-right: 1%;
+}
 .icones{
     display: flex;
     justify-content: end;
@@ -64,6 +74,7 @@ color: #fff;
     width: 100%;
     padding-right: 0;
     padding-bottom: 0.5%;
+    height: 2rem;
 }
 .fa-solid{
     margin-right:2rem;

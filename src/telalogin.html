@@ -27,7 +27,7 @@
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../index.html">Principal</a>
+                    <a id="home"class="nav-link active" aria-current="page" href="../index.html">Principal</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle"role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,9 +44,13 @@
               </div>
             </div>
           </nav>
+         
           <div class="icones">
-            <a href=""> <i id="carrinho" class="fa-solid fa-cart-shopping fa-lg" ></i></a>
+            <div id="usuarioLogado" class="nomeUsuario">
+                <a href="./telalogin.html"> <p>Login</p></a><!--preenchido com nome de usuaário logado-->
+            </div>
             <a href=""> <i id="icone usuario" class="fa-sharp fa-solid fa-circle-user fa-lg" ></i></a>
+            <a href=""> <i id="carrinho" class="fa-solid fa-cart-shopping fa-lg" ></i></a>
             <a href=""> <i id="configurações" class="fa-solid fa-gear fa-lg" ></i></a>
         </div>
     </header>
@@ -62,8 +66,8 @@
             <label for="pwd">Senha:</label>
             <input type="password" class="form-control" id="pwd" name="password">
           </div>
-          <button type="submit" class="btn btn-dark">Login</button>
         </form>
+        <button id="login" class="btn btn-dark">Login</button>
       </div>
 
     <footer >
@@ -76,8 +80,9 @@
       </ul>
       <p class="text-center text-muted">© 2024 Company, Inc</p>
     </footer>
-    <script src="../js/slide.js" defer></script>
+    
     <script src="https://kit.fontawesome.com/82a2bf6482.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../js/telalogin.js"></script>
 </body>
 </html>
