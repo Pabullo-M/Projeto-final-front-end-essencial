@@ -58,29 +58,32 @@ function dadosCarrinho() {
   const carrinho = buscarCarrinho();
   const totalElement = document.querySelector('.valorTotal');
 
-  totalElement.innerHTML = ''; // Limpar conteúdo existente antes de adicionar novos elementos
+  if (!totalElement) {
+    console.error("Elemento 'valorTotal' não encontrado no DOM.");
+    return;
+  }
 
+  totalElement.innerHTML = ''; // Limpar conteúdo existente antes de adicionar novos elementos
 
   const divSomatorio = document.createElement('div');
   divSomatorio.classList.add('somatorio');
   totalElement.appendChild(divSomatorio);
 
-  //preco String para Number
+  // Calcular o total usando reduce e limpando o formato do preço
+  const totalCarrinho = carrinho.reduce((acc, item) => {
+    const precoLimpo = parseFloat(item.preco.replace('$', '').trim());
+    return acc + (isNaN(precoLimpo) ? 0 : precoLimpo); // Adicionar ao acumulador se for um número válido
+  }, 0);
 
-  // Calcular o total usando reduce e assumindo 1 item por produto
-  const total = carrinho.reduce((acc, item) => acc + Number(item.preco), 0);
   const totalItens = carrinho.length;
 
   const totalItensElement = document.createElement('p');
   totalItensElement.textContent = `Total de itens: ${totalItens}`;
   divSomatorio.appendChild(totalItensElement);
+
   const totalCarrinhoElement = document.createElement('p');
+  totalCarrinhoElement.textContent = `Total: R$ ${totalCarrinho.toFixed(2).toString()}`;
   divSomatorio.appendChild(totalCarrinhoElement);
-
-  totalCarrinhoElement.textContent = `Total: R$ ${total.toFixed(2).toString().replace('.', ',')}`;
-  divSomatorio.appendChild(totalCarrinhoElement);
-
-
 
   const divBotao = document.createElement('div');
   divBotao.classList.add('botaoFinalizar');
@@ -90,7 +93,7 @@ function dadosCarrinho() {
   botaoFinalizar.textContent = 'Finalizar compra';
   botaoFinalizar.classList.add('finalizarCompra');
   divBotao.appendChild(botaoFinalizar);
-  }
+}
 
 
 export function mostrarDadosCarrinho() {
