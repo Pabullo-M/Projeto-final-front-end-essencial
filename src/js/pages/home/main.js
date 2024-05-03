@@ -1,5 +1,5 @@
 import { initializeSlider } from "../utils/slider.js";
-import { setupSearchForm } from "../../components/pesquisa.js";
+import { setupFormPesquisa } from "../../components/pesquisa.js";
 // import { setupUserIcon } from "./components/usuario.js";
 import { irParaPrincipal } from '../../components/principal.js';
 import { usuarioLogado } from "../../components/login.js";
@@ -12,7 +12,7 @@ import { fetchProducts } from "../../services/api.js";
 
 document.addEventListener('DOMContentLoaded', async function() {
     initializeSlider();
-    setupSearchForm();
+    setupFormPesquisa();
     // setupUserIcon();
     irParaPrincipal();
     usuarioLogado();

@@ -1,4 +1,4 @@
-import { login, logout, usuarioLogado } from "./login.js";
+import { login, logout, usuarioLogado } from "../../components/login.js";
 import { irParaPrincipal } from "../../components/principal.js";
 
 document.addEventListener('DOMContentLoaded', function() {
