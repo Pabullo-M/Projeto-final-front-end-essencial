@@ -91,6 +91,7 @@ function dadosCarrinho() {
 
   const botaoFinalizar = document.createElement('button');
   botaoFinalizar.textContent = 'Finalizar compra';
+  botaoFinalizar.id = 'exit';  // Definindo o ID do botão de maneira correta
   botaoFinalizar.classList.add('finalizarCompra');
   divBotao.appendChild(botaoFinalizar);
 }

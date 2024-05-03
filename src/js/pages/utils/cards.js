@@ -4,7 +4,7 @@ function createProductCard(container, { nome, foto, preco }, type = 'home') {
   card.innerHTML = `
       <img src="${foto}" alt="${nome}">
       <h3>${nome}</h3>
-      <p>R${preco}</p>
+      <p>${preco}</p>
   `;
 
   if (type === 'home') {
