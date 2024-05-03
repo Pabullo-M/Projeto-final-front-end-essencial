@@ -10,14 +10,14 @@ function createProductCard(container, { nome, foto, preco }, type = 'home') {
   if (type === 'home') {
       const addButton = document.createElement('button');
       addButton.textContent = 'Adicionar ao Carrinho';
-      addButton.onclick = () => addToCart(nome, preco, foto);
+    //   addButton.onclick = () => addToCart(nome, preco, foto);
       card.appendChild(addButton);
       
   } else if (type === 'cart') {
       const div = document.createElement('div');
       const addButton = document.createElement('button');
       addButton.textContent = 'Adicionar';
-      addButton.onclick = () => addToCart(nome, preco, foto);
+    //   addButton.onclick = () => addToCart(nome, preco, foto);
       const removeButton = document.createElement('button');
       removeButton.textContent = 'Remover';
       removeButton.onclick = () => removeFromCart(nome);

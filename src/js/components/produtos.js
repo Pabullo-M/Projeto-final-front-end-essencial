@@ -1,4 +1,4 @@
-import { createProductCard } from '../../utils/cards.js';
+import { createProductCard } from '../pages/utils/cards.js';
 
 // adicionar produtos ao carrinho
 function addToCart(produtoNome, produtoPreco, produtoImagem) {
