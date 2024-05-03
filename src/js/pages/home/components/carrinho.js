@@ -19,10 +19,15 @@ function buscarUsuario() {
 
 function irParaCarrinho() {
   const carrinho = buscarCarrinho();
+  const usuario = buscarUsuario();
 
-  if (carrinho.length > 0) {
+  if (usuario) {
+    if (carrinho.length > 0) {
     window.location.href = 'carrinho.html';
   } else {
     alert('Carrinho vazio!');
   }
+  } else {
+    alert('Faça login para acessar o carrinho!');
+  }  
 }

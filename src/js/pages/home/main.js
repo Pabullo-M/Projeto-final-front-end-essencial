@@ -1,4 +1,4 @@
-import { initializeSlider } from "./utils/slider.js";
+import { initializeSlider } from "../utils/slider.js";
 import { setupSearchForm } from "./components/pesquisa.js";
 // import { setupUserIcon } from "./components/usuario.js";
 import { setupNavigationLinks } from './components/principal.js';

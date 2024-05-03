@@ -1,14 +1,15 @@
-let usuario;
+import { fetchUsers } from '../';
+// let usuario;
 
-async function buscaUsuario() {
-    try {
-        const response = await fetch('https://my-json-server.typicode.com/Pabullo-M/api/usuario');
-        usuario = await response.json();
-        return usuario;
-    } catch (error) {
-        console.error('Erro ao buscar usuário:', error);
-    }
-}
+// async function buscaUsuario() {
+//     try {
+//         const response = await fetch('https://my-json-server.typicode.com/Pabullo-M/api/usuario');
+//         usuario = await response.json();
+//         return usuario;
+//     } catch (error) {
+//         console.error('Erro ao buscar usuário:', error);
+//     }
+// }
 
 function receberUsuario() {
     let nome = document.getElementById("usr").value;
@@ -34,7 +35,7 @@ async function login() {
 
         if (posicao !== -1) {
             let nome = receberUsuario().nome;
-            let senha = receberUsuario().senha;
+            // let senha = receberUsuario().senha;
             localStorage.setItem('nome', nome);;
             let storage = localStorage.getItem('nome')
             alert("Usuario conectado com sucesso");
