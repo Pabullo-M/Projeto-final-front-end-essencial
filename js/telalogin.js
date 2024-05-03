@@ -38,7 +38,7 @@ async function login() {
             localStorage.setItem('nome', nome);;
             let storage = localStorage.getItem('nome')
             alert("Usuario conectado com sucesso");
-            window.location.href = "../src/index.html";
+            window.location.href = '../index.html';
                 } else {
             alert("Usuario ou senha incorretos")
         }
