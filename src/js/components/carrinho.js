@@ -89,10 +89,13 @@ function dadosCarrinho() {
   divBotao.classList.add('botaoFinalizar');
   totalElement.appendChild(divBotao);
 
+  // Botão Finalizar Compra com redirecionamento para login
   const botaoFinalizar = document.createElement('button');
   botaoFinalizar.textContent = 'Finalizar compra';
-  botaoFinalizar.id = 'exit';  // Definindo o ID do botão de maneira correta
   botaoFinalizar.classList.add('finalizarCompra');
+  botaoFinalizar.addEventListener('click', () => {
+    window.location.href = '../src/telalogin.html'; // Adapte o caminho conforme necessário
+  });
   divBotao.appendChild(botaoFinalizar);
 }
 
