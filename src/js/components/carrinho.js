@@ -56,8 +56,17 @@ export function mostrarItensCarrinho() {
 
 function dadosCarrinho() {
   const carrinho = buscarCarrinho();
-  const total = carrinho.reduce((acc, item) => acc + Number(item.preco), 0);
   const totalElement = document.querySelector('.valorTotal');
+ 
+ 
+  const total = carrinho.reduce((acc, item) => acc + Number(item.preco), 0);
+ 
+  // carrinho.forEach(item => {
+  //   const itemElement = document.createElement('li');
+  //   itemElement.textContent = item.nome;
+  //   itensCarrinhoElement.appendChild(itemElement);
+  // });
+
   totalElement.textContent = `Total: R$ ${total.toFixed(2).toString()}`;
 }
 
