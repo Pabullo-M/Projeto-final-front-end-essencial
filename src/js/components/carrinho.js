@@ -57,32 +57,40 @@ export function mostrarItensCarrinho() {
 function dadosCarrinho() {
   const carrinho = buscarCarrinho();
   const totalElement = document.querySelector('.valorTotal');
-  const containerTotal = document.createElement('div');
-  totalElement.appendChild(containerTotal);
- 
-  let total = 0;
-  carrinho.forEach(item => {
-    // Convertendo para número e verificando se é NaN
-    const preco = Number(item.preco);
-    if (!isNaN(preco)) {
-      total += preco * (item.quantidade || 1); // Multiplicando pelo número de itens, assumindo 1 se não especificado
-    } else {
-      console.warn(`Preço inválido detectado: ${item.preco}`);
-    }
-  });
 
-  // Verificação após a tentativa de cálculo
-  if (isNaN(total)) {
-    totalElement.textContent = "Total: R$ Erro no cálculo";
-  } else {
-    totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+  if (!totalElement) {
+    console.error("Elemento 'valorTotal' não encontrado no DOM.");
+    return;
   }
 
-  const containerFinalizar = document.createElement('div');
-  totalElement.appendChild(containerFinalizar);
-  const botaoFinalizar = document.createElement('button');
-  botaoFinalizar.textContent = 'Finalizar compra';
-  containerFinalizar.appendChild(botaoFinalizar);
+  totalElement.innerHTML = ''; // Limpar conteúdo existente antes de adicionar novos elementos
+
+  // Calcular total e quantidade de itens usando reduce
+  const resultado = carrinho.reduce((acc, item) => {
+    const preco = Number(item.preco);
+    if (!isNaN(preco) && item.quantidade) {
+      acc.total += preco * item.quantidade;
+      acc.quantidade += item.quantidade;
+    }
+    return acc;
+  }, { total: 0, quantidade: 0 });
+
+  // Verificar se o cálculo do total resultou em um número válido
+  if (isNaN(resultado.total)) {
+    totalElement.textContent = "Erro ao calcular o total";
+  } else {
+    const containerTotal = document.createElement('div');
+    containerTotal.innerHTML = `
+      <p>Total de Itens: ${resultado.quantidade}</p>
+      <p>Total: R$ ${resultado.total.toFixed(2)}</p>
+    `;
+    totalElement.appendChild(containerTotal);
+
+    const botaoFinalizar = document.createElement('button');
+    botaoFinalizar.textContent = 'Finalizar compra';
+    botaoFinalizar.classList.add('finalizarCompra');
+    totalElement.appendChild(botaoFinalizar);
+  }
 }
 
 export function mostrarDadosCarrinho() {
