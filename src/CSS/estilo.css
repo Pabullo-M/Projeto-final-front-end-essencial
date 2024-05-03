@@ -137,10 +137,11 @@ footer.nav-item{
     .logo-img{
         position: fixed;
         width: auto;
+        margin-bottom: 11%;
     }
     .logo-img img{
         width: 50%;
         height: 50%;
-        padding-bottom: 20%;
     }
+   
 }
