@@ -77,6 +77,12 @@ function dadosCarrinho() {
   } else {
     totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
   }
+
+  const containerFinalizar = document.createElement('div');
+  totalElement.appendChild(containerFinalizar);
+  const botaoFinalizar = document.createElement('button');
+  botaoFinalizar.textContent = 'Finalizar compra';
+  containerFinalizar.appendChild(botaoFinalizar);
 }
 
 export function mostrarDadosCarrinho() {
