@@ -57,33 +57,41 @@ export function mostrarItensCarrinho() {
 function dadosCarrinho() {
   const carrinho = buscarCarrinho();
   const totalElement = document.querySelector('.valorTotal');
-  const containerTotal = document.createElement('div');
-  totalElement.appendChild(containerTotal);
- 
-  let total = 0;
-  carrinho.forEach(item => {
-    // Convertendo para número e verificando se é NaN
-    const preco = Number(item.preco);
-    if (!isNaN(preco)) {
-      total += preco * (item.quantidade || 1); // Multiplicando pelo número de itens, assumindo 1 se não especificado
-    } else {
-      console.warn(`Preço inválido detectado: ${item.preco}`);
-    }
-  });
 
-  // Verificação após a tentativa de cálculo
-  if (isNaN(total)) {
-    totalElement.textContent = "Total: R$ Erro no cálculo";
-  } else {
-    totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
-  }
+  totalElement.innerHTML = ''; // Limpar conteúdo existente antes de adicionar novos elementos
 
-  const containerFinalizar = document.createElement('div');
-  totalElement.appendChild(containerFinalizar);
+
+  const divSomatorio = document.createElement('div');
+  divSomatorio.classList.add('somatorio');
+  totalElement.appendChild(divSomatorio);
+
+  //preco String para Number
+
+  // Calcular o total usando reduce e assumindo 1 item por produto
+  const total = carrinho.reduce((acc, item) => acc + Number(item.preco), 0);
+  const totalItens = carrinho.length;
+
+  const totalItensElement = document.createElement('p');
+  totalItensElement.textContent = `Total de itens: ${totalItens}`;
+  divSomatorio.appendChild(totalItensElement);
+  const totalCarrinhoElement = document.createElement('p');
+  divSomatorio.appendChild(totalCarrinhoElement);
+
+  totalCarrinhoElement.textContent = `Total: R$ ${total.toFixed(2).toString().replace('.', ',')}`;
+  divSomatorio.appendChild(totalCarrinhoElement);
+
+
+
+  const divBotao = document.createElement('div');
+  divBotao.classList.add('botaoFinalizar');
+  totalElement.appendChild(divBotao);
+
   const botaoFinalizar = document.createElement('button');
   botaoFinalizar.textContent = 'Finalizar compra';
-  containerFinalizar.appendChild(botaoFinalizar);
-}
+  botaoFinalizar.classList.add('finalizarCompra');
+  divBotao.appendChild(botaoFinalizar);
+  }
+
 
 export function mostrarDadosCarrinho() {
   dadosCarrinho();
