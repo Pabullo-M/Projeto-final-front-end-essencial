@@ -1,6 +1,10 @@
 function handleHomeLinkClick(event) {
   event.preventDefault();
 
+  // Remover a categoria atual do localStorage
+  localStorage.removeItem('categoriaAtual');
+
+  // Redirecionar para a página principal
   window.location.href = './index.html';
 }
 
