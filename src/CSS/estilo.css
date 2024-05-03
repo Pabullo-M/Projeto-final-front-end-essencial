@@ -67,6 +67,11 @@ color: #fff;
     font-weight: 900;
     padding-right: 1%;
 }
+.logo-img{
+    margin-right: 42%;
+}
+
+
 .icones{
     display: flex;
     justify-content: end;
@@ -127,6 +132,15 @@ footer.nav-item{
     }
     .navbar-nav{
         background-color: orange;
+        
     }
-
+    .logo-img{
+        position: fixed;
+        width: auto;
+    }
+    .logo-img img{
+        width: 50%;
+        height: 50%;
+        padding-bottom: 20%;
+    }
 }
