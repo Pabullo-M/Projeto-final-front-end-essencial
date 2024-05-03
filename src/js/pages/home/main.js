@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     usuarioLogado();
     initializeCart();
 
-    
     // Busca os produtos da API e renderiza no DOM
     try {
         const produtos = await fetchProducts();

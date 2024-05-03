@@ -1,3 +1,5 @@
+import { createProductCard } from '../pages/utils/cards.js';
+
 export function initializeCart() {
   const carrinhoLink = document.querySelector('.carrinho-link');
   carrinhoLink.addEventListener('click', function(event) {
@@ -32,4 +34,22 @@ function irParaCarrinho() {
   }  
 }
 
-console.log(buscarUsuario());
+export function mostrarItensCarrinho() {
+  const carrinho = buscarCarrinho(); // Certifique-se de que esta função retorna os itens corretamente
+  const itensCarrinho = document.querySelector('.itensCarrinho');
+
+  if (carrinho.length === 0) {
+    itensCarrinho.innerHTML = '<p>Carrinho vazio</p>';
+    return;
+  }
+
+  itensCarrinho.innerHTML = '';
+  carrinho.forEach(item => {
+    // Aproveita a função de criação de card para o carrinho
+    createProductCard(itensCarrinho, {
+      nome: item.nome,
+      foto: item.foto,
+      preco: item.preco
+    }, 'cart');
+  });
+}
