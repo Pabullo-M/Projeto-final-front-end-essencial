@@ -53,3 +53,14 @@ export function mostrarItensCarrinho() {
     }, 'cart');
   });
 }
+
+function dadosCarrinho() {
+  const carrinho = buscarCarrinho();
+  const total = carrinho.reduce((acc, item) => acc + Number(item.preco), 0);
+  const totalElement = document.querySelector('.valorTotal');
+  totalElement.textContent = `Total: R$ ${total.toFixed(2).toString()}`;
+}
+
+export function mostrarDadosCarrinho() {
+  dadosCarrinho();
+}
