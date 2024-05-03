@@ -1,10 +1,10 @@
 function handleHomeLinkClick(event) {
   event.preventDefault();
 
-  window.Location.href = './index.html';
+  window.location.href = './index.html';
 }
 
-export function setupNavigationLinks() {
+export function irParaPrincipal() {
   const homeLink = document.querySelector('.nav-link.active[aria-current="page"]');
   homeLink.addEventListener('click', handleHomeLinkClick);
 }

@@ -22,7 +22,8 @@ async function fetchProducts() {
 
 async function fetchUsers() {
     try {
-        const response = await fetch(`${BASE_URL}/usuarios`);
+        const response = await fetch(`${BASE_URL}/usuario`);
+        console.log("Response:", response);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
