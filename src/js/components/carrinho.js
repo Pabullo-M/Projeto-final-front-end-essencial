@@ -58,40 +58,40 @@ function dadosCarrinho() {
   const carrinho = buscarCarrinho();
   const totalElement = document.querySelector('.valorTotal');
 
-  if (!totalElement) {
-    console.error("Elemento 'valorTotal' não encontrado no DOM.");
-    return;
-  }
-
   totalElement.innerHTML = ''; // Limpar conteúdo existente antes de adicionar novos elementos
 
-  // Calcular total e quantidade de itens usando reduce
-  const resultado = carrinho.reduce((acc, item) => {
-    const preco = Number(item.preco);
-    if (!isNaN(preco) && item.quantidade) {
-      acc.total += preco * item.quantidade;
-      acc.quantidade += item.quantidade;
-    }
-    return acc;
-  }, { total: 0, quantidade: 0 });
 
-  // Verificar se o cálculo do total resultou em um número válido
-  if (isNaN(resultado.total)) {
-    totalElement.textContent = "Erro ao calcular o total";
-  } else {
-    const containerTotal = document.createElement('div');
-    containerTotal.innerHTML = `
-      <p>Total de Itens: ${resultado.quantidade}</p>
-      <p>Total: R$ ${resultado.total.toFixed(2)}</p>
-    `;
-    totalElement.appendChild(containerTotal);
+  const divSomatorio = document.createElement('div');
+  divSomatorio.classList.add('somatorio');
+  totalElement.appendChild(divSomatorio);
 
-    const botaoFinalizar = document.createElement('button');
-    botaoFinalizar.textContent = 'Finalizar compra';
-    botaoFinalizar.classList.add('finalizarCompra');
-    totalElement.appendChild(botaoFinalizar);
+  //preco String para Number
+
+  // Calcular o total usando reduce e assumindo 1 item por produto
+  const total = carrinho.reduce((acc, item) => acc + Number(item.preco), 0);
+  const totalItens = carrinho.length;
+
+  const totalItensElement = document.createElement('p');
+  totalItensElement.textContent = `Total de itens: ${totalItens}`;
+  divSomatorio.appendChild(totalItensElement);
+  const totalCarrinhoElement = document.createElement('p');
+  divSomatorio.appendChild(totalCarrinhoElement);
+
+  totalCarrinhoElement.textContent = `Total: R$ ${total.toFixed(2).toString().replace('.', ',')}`;
+  divSomatorio.appendChild(totalCarrinhoElement);
+
+
+
+  const divBotao = document.createElement('div');
+  divBotao.classList.add('botaoFinalizar');
+  totalElement.appendChild(divBotao);
+
+  const botaoFinalizar = document.createElement('button');
+  botaoFinalizar.textContent = 'Finalizar compra';
+  botaoFinalizar.classList.add('finalizarCompra');
+  divBotao.appendChild(botaoFinalizar);
   }
-}
+
 
 export function mostrarDadosCarrinho() {
   dadosCarrinho();
