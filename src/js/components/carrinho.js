@@ -13,7 +13,7 @@ function buscarCarrinho() {
 }
 
 function buscarUsuario() {
-  const usuario = JSON.parse(localStorage.getItem('usuario'));
+  const usuario = localStorage.getItem('nome');
   return usuario;
 }
 
