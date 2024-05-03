@@ -48,7 +48,7 @@ export function mostrarItensCarrinho() {
     // Aproveita a função de criação de card para o carrinho
     createProductCard(itensCarrinho, {
       nome: item.nome,
-      foto: item.foto,
+      foto: item.imagem,
       preco: item.preco
     }, 'cart');
   });
