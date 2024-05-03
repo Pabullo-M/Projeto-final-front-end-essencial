@@ -57,17 +57,32 @@ export function mostrarItensCarrinho() {
 function dadosCarrinho() {
   const carrinho = buscarCarrinho();
   const totalElement = document.querySelector('.valorTotal');
+  const containerTotal = document.createElement('div');
+  totalElement.appendChild(containerTotal);
  
- 
-  const total = carrinho.reduce((acc, item) => acc + Number(item.preco), 0);
- 
-  // carrinho.forEach(item => {
-  //   const itemElement = document.createElement('li');
-  //   itemElement.textContent = item.nome;
-  //   itensCarrinhoElement.appendChild(itemElement);
-  // });
+  let total = 0;
+  carrinho.forEach(item => {
+    // Convertendo para número e verificando se é NaN
+    const preco = Number(item.preco);
+    if (!isNaN(preco)) {
+      total += preco * (item.quantidade || 1); // Multiplicando pelo número de itens, assumindo 1 se não especificado
+    } else {
+      console.warn(`Preço inválido detectado: ${item.preco}`);
+    }
+  });
 
-  totalElement.textContent = `Total: R$ ${total.toFixed(2).toString()}`;
+  // Verificação após a tentativa de cálculo
+  if (isNaN(total)) {
+    totalElement.textContent = "Total: R$ Erro no cálculo";
+  } else {
+    totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+  }
+
+  const containerFinalizar = document.createElement('div');
+  totalElement.appendChild(containerFinalizar);
+  const botaoFinalizar = document.createElement('button');
+  botaoFinalizar.textContent = 'Finalizar compra';
+  containerFinalizar.appendChild(botaoFinalizar);
 }
 
 export function mostrarDadosCarrinho() {

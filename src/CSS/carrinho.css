@@ -1,5 +1,6 @@
 body{
     margin-bottom: 10%;
+    color:green;
 }
 
 
@@ -28,12 +29,15 @@ body{
 
 .valorTotal{
     width: 26%;
+    height: 15%;
     margin-left: 3%;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.562);
     position: relative;
     display: flex;
     flex-direction: column;
+    margin-top: 20%;
+    justify-content: center;
 }
 
 .card{
@@ -72,4 +76,15 @@ body{
     font-weight: 600;
     color: white;
     background-color: black;
+}
+
+.valorTotal div{
+    margin-left: 26%;
+    color: green;
+}
+.valorTotal div button{
+    background-color: black;
+    color: white;
+    font-weight: 600;
+
 }
