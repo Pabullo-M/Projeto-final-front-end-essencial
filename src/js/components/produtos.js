@@ -12,12 +12,12 @@ function addToCart(produtoNome, produtoPreco, produtoImagem) {
 function setupCardInteractions() {
   const cards = document.querySelectorAll('.card');
   cards.forEach(card => {
-    const saibaMaisButton = card.querySelector('button');
+    const adicionarCarrinho = card.querySelector('button');
     const produtoNome = card.querySelector('h3').textContent;
     const produtoPreco = card.querySelector('p').textContent;
     const produtoImagem = card.querySelector('img').src;
 
-    saibaMaisButton.addEventListener('click', () => {
+    adicionarCarrinho.addEventListener('click', () => {
       addToCart(produtoNome, produtoPreco, produtoImagem);
     });
   });
