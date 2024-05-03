@@ -31,3 +31,5 @@ function irParaCarrinho() {
     alert('Faça login para acessar o carrinho!');
   }  
 }
+
+console.log(buscarUsuario());
