@@ -1,4 +1,4 @@
-import { fetchUsers } from '../../services/api.js';
+import { fetchUsers } from '../services/api.js';
 
 function receberUsuario() {
     let nome = document.getElementById("usr").value;
