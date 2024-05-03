@@ -1,7 +1,11 @@
+body{
+    margin-bottom: 10%;
+}
+
+
 .containerCarrinho{
     display: flex;
     flex-direction: row;
-    
     padding-top: 10%;
     padding-bottom: 7%;
     width: 100%;
@@ -11,11 +15,14 @@
 
 .itensCarrinho{
     width: 65%;
+    overflow: auto;
+    height: 90%;
     margin-left: 3%;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.562);
     display: flex;
     flex-direction: column;
+    margin-bottom: 100%;
+    background-color: rgba(255, 255, 255, 0.259);
    
 }
 
@@ -24,6 +31,43 @@
     margin-left: 3%;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.562);
+    position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.card{
+    border-radius: 20px !important;
+    padding-top: 5%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    margin-bottom:2%;
+}
+
+.card img{
+    width: 20%;
+    height: 90%;
+    
+}
+.card h3{
+    height: 25%;
+    padding-top: 10%;
+}
+.card p{
+    height: 25%;
+    padding-top: 11%;
+    margin-right:15%;
+}
+
+.card div{
+    height: 25%;
+    padding-top: 10%;
+    margin-right: 10%;
+}
+.card div button{
+    font-weight: 600;
+    color: white;
+    background-color: black;
 }
