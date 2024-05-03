@@ -59,6 +59,8 @@ body{
     height: 25%;
     padding-top: 11%;
     margin-right:15%;
+    font-weight: 900;
+    color: green;
 }
 
 .card div{
